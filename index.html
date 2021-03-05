@@ -11,25 +11,33 @@
 
   Score
   Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
- 
+  
 
 </head>
 <body>
+  <div class="player-choice-container" id ="player-choice-container">
+    <span>You Picked</span>
+  </div>
+  <div class="house-choice-container" id="house-choice-container">
+    <span>The house picked</span>
+  </div>
+
+  <div class="winner-container">
+    <!--You Win
+    You Lose
+    -->
+  </div>
+ 
   <button id="play-again-button" class="play-again-button"> play again</button>
  
 
-  <!-- Modal content -->
-  <div id="choice-modal" class="choice-modal">
-    <span class="close">&times;</span>
-    <img src=" ./images/icon-paper.svg" alt="Paper imgae" id="icon-paper">
-    <img src="./images/icon-rock.svg" alt="Rock image" id="icon-rock">
+  <!-- container content -->
+  <div id="choice-container" class="choice-container">
+    
+
     <img src="./images/icon-scissors.svg" alt="Scissors image" id="icon-scissors">
+    <img src="./images/icon-rock.svg" alt="Rock image" id="icon-rock">
+    <img src=" ./images/icon-paper.svg" alt="Paper imgae" id="icon-paper">
   </div>
 
 
