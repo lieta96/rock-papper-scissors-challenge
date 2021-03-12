@@ -1,3 +1,164 @@
+/*
+Scissors Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%)
+Paper Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%)
+Rock Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%)
+Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
+Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%)
+Neutral
+
+Neutral
+Dark Text: hsl(229, 25%, 31%)
+Score Text: hsl(229, 64%, 46%)
+Header Outline: hsl(217, 16%, 45%)
+
+Radial Gradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+ *{
+     padding: 0;
+     margin: 0;
+ }
+
+body {
+    text-align: center;
+    background: rgb(31,54,86);
+    background: radial-gradient(circle, rgba(31,54,86,1) 0%, rgba(19,21,56,1) 100%);
+    min-height: 100vh;
+    width: 100vw;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    position:relative;
+}
+
+.header-container{
+    border:  2px solid  hsl(217, 16%, 45%);
+    border-radius: 10px;
+    width: 500px;
+    height: 100px;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-title{
+    line-height: 20px;
+    flex-grow: 1;
+    text-align: start;
+    margin-left: 20px;
+}
+.score-container{
+    margin-right: 20px;
+    background-color: #fff;
+    width: 100px;
+    height: 80%;
+    border-radius: 5px;
+}
+.score-container h3{
+    font-size: 12px;
+    margin-bottom: -10px;
+    letter-spacing: 3px;
+    color:hsl(229, 25%, 31%);
+    margin-top: 20px;
+
+}
+.score-container .player-score{
+    color:hsl(229, 25%, 31%);
+    font-size: 50px;
+}
+
 .choice-container{
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.choice-container .background {
+    padding: 50px;
+    height: 200px;
+    margin: auto;
+    position: absolute;
+   z-index: -1;
+}
+.top-icons{
+    display: flex;
+    justify-content: space-between;
+}
+.icon-container{
+    background-color: #fff;
+    border: 10px solid;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.paper-icon-container{
+    border-color: hsl(230, 89%, 62%);
+    margin-right: 30px;
+}
+.scissors-icon-container{
+    border-color: rgba(236,158,13,1) ;
+    margin-left: 30px;
+}
+.rock-icon-container{
+    border-color: hsl(349, 71%, 52%);
+    margin-top: 30px;
+}
+/* Resultados*/
+.results-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
     display: none;
+}
+.player-choice-container, .house-choice-container {
+    margin: 0 20px;
+}
+.player-choice-container{
+    order:-1
+}
+.house-choice-container{
+    order: 3;
+}
+.results-container .icon-container {
+    border: 20px solid;
+    width: 200px;
+    height: 200px; 
+}
+.icon-container img{
+    height: 50%;
+}
+.results-container .icon-container.rock-border{
+    border-color: hsl(349, 71%, 52%);
+}
+.results-container .icon-container.paper-border{
+    border-color: hsl(230, 89%, 62%);
+}
+.results-container .icon-container.scissors-border{
+    border-color: rgba(236,158,13,1) ;
+}
+.winner-container{
+    display: none;
+}
+footer{ 
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+.play-again-button{
+    padding: 10px;
+border: none;
+border-radius: 10px;
+text-transform: uppercase;
+width: 100%;
+}
+#win-lose{
+    font-size: 40px;
 }

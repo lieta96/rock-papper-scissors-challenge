@@ -9,43 +9,64 @@
   
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-  Score
-  Rules
-  
+ </head>
 
-</head>
 <body>
-  <div class="player-choice-container" id ="player-choice-container">
-    <span>You Picked</span>
-  </div>
-  <div class="house-choice-container" id="house-choice-container">
-    <span>The house picked</span>
-  </div>
 
-  <div class="winner-container">
-    <!--You Win
-    You Lose
-    -->
-  </div>
- 
-  <button id="play-again-button" class="play-again-button"> play again</button>
- 
+  <header class="header-container" id="header-container">
+    <div class="main-title" id=" main-title">
+      <h2>Paper</h2>
+      <h2>Rock</h2>
+      <h2>Scissors</h2>
+    </div>
 
-  <!-- container content -->
+    <div class="score-container" id="score-container">
+      <h3>Score</h3>
+      <span class="player-score" id="player-score"></span>
+    </div>
+    <span></span>
+
+  </header>
+
+  <!-- paper rock scissors -->
   <div id="choice-container" class="choice-container">
+    <img src="./images/bg-triangle.svg" alt="" class="background">
+<!-- 
+    <div class="top-icons" id="top-icons">
+      <div class="icon-container paper-icon-container" id="paper-icon-container">
+        <img src=" ./images/icon-paper.svg" alt="Paper imgae" id="icon-paper">
+      </div>
+      <div class="icon-container scissors-icon-container" id="scissors-icon-container">
+        <img src="./images/icon-scissors.svg" alt="Scissors image" id="icon-scissors">
+      </div>
+    </div> -->
     
+    <!-- <div class="icon-container rock-icon-container" id="rock-icon-container">
+      <img src="./images/icon-rock.svg" alt="Rock image" id="icon-rock">
+    </div> -->
 
-    <img src="./images/icon-scissors.svg" alt="Scissors image" id="icon-scissors">
-    <img src="./images/icon-rock.svg" alt="Rock image" id="icon-rock">
-    <img src=" ./images/icon-paper.svg" alt="Paper imgae" id="icon-paper">
   </div>
 
-
+  <!-- Results Section -->
+  <section class="results-container" id="results-container">
+    
+    <div class="player-choice-container" id ="player-choise-container">
+      <span>You Picked</span>
+    </div>
+    
+    <div class="house-choice-container" id="house-choice-container">
+      <span>The house picked</span>
+      
+      <div id="house-choise-container" class="house-choise-container">
+      </div>
+    </div>
+  </section>
   
-  <div class="attribution">
+
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </footer>
   <script src="script.js "></script>
 </body>
 </html>

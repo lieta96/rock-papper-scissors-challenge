@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="ble">
+        <button id="button">button</button>
+
+    </div>
+    <script>
+        const ble=document.getElementById('ble');
+        const button=document.getElementById('button');
+button.addEventListener("click",()=>{ble.appendChild(scissorsContainer)})
+        const scissorsContainer = document.createElement ('div');
+scissorsContainer.innerHTML= `<div class="icon-container scissors-icon-container" id="scissors-icon-container">
+<img src="./images/icon-scissors.svg" alt="Scissors image" id="icon-scissors">
+</div>`;
+
+    </script>
+</body>
+</html>
