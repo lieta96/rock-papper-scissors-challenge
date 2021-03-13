@@ -29,20 +29,21 @@ body {
     color: #fff;
     text-transform: uppercase;
     position:relative;
+    overflow: hidden;
 }
 
 .header-container{
     border:  2px solid  hsl(217, 16%, 45%);
     border-radius: 10px;
     width: 500px;
-    height: 100px;
     display: flex;
     margin: auto;
     justify-content: space-between;
     align-items: center;
+    margin-top: 100px;
 }
 .main-title{
-    line-height: 20px;
+    margin-top: 10px;
     flex-grow: 1;
     text-align: start;
     margin-left: 20px;
@@ -50,8 +51,8 @@ body {
 .score-container{
     margin-right: 20px;
     background-color: #fff;
-    width: 100px;
-    height: 80%;
+    width: 80px;
+    padding: 10px;
     border-radius: 5px;
 }
 .score-container h3{
@@ -59,7 +60,7 @@ body {
     margin-bottom: -10px;
     letter-spacing: 3px;
     color:hsl(229, 25%, 31%);
-    margin-top: 20px;
+    margin-top: 10px;
 
 }
 .score-container .player-score{
@@ -95,20 +96,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: inset 0 0.5rem #bec0d4;
     
 }
-.paper-icon-container{
-    border-color: hsl(230, 89%, 62%);
-    margin-right: 30px;
-}
-.scissors-icon-container{
-    border-color: rgba(236,158,13,1) ;
-    margin-left: 30px;
-}
-.rock-icon-container{
-    border-color: hsl(349, 71%, 52%);
-    margin-top: 30px;
-}
+
 /* Resultados*/
 .results-container {
     display: flex;
@@ -118,47 +109,115 @@ body {
 }
 .player-choice-container, .house-choice-container {
     margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
 }
 .player-choice-container{
-    order:-1
+    order:-1;
+    flex-grow: 1;
 }
 .house-choice-container{
     order: 3;
+    flex-grow: 1;
 }
 .results-container .icon-container {
     border: 20px solid;
     width: 200px;
-    height: 200px; 
+    height: 200px;
+    margin-top: 20px;
+}
+.results-container h4{
+    font-size: 20px;
+}
+.paper-icon-container, .results-container .paper-icon-container{
+    border-color: hsl(230, 89%, 62%);
+    margin-right: 30px;
+}
+.scissors-icon-container,  .results-container .scissors-icon-container{
+    border-color: rgba(236,158,13,1) ;
+    margin-left: 30px;
+}
+.rock-icon-container, .results-container .rock-icon-container{
+    border-color: hsl(349, 71%, 52%);
+    margin-top: 30px;
 }
 .icon-container img{
     height: 50%;
 }
-.results-container .icon-container.rock-border{
-    border-color: hsl(349, 71%, 52%);
-}
-.results-container .icon-container.paper-border{
-    border-color: hsl(230, 89%, 62%);
-}
-.results-container .icon-container.scissors-border{
-    border-color: rgba(236,158,13,1) ;
-}
-.winner-container{
-    display: none;
-}
+
+
 footer{ 
     position: absolute;
     bottom: 0;
     margin: auto;
     left: 0;
     right: 0;
+    text-transform: capitalize;
+    padding-bottom: 20px;
+    font-weight: 200;
+}
+a{
+    text-decoration: none;
+    color: #fff;
 }
 .play-again-button{
+    margin-top:10px;
     padding: 10px;
-border: none;
-border-radius: 10px;
-text-transform: uppercase;
-width: 100%;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+
+}
+.play-again-button:hover{
+    color:hsl(349, 71%, 52%);
+
 }
 #win-lose{
     font-size: 40px;
+}
+.winner-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@media(max-width:850px){
+    .results-container .icon-container {
+        border: 10px solid;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    .paper-icon-container, .results-container .paper-icon-container{
+        border-color: hsl(230, 89%, 62%);
+        margin-right: 30px;
+    }
+    .scissors-icon-container,  .results-container .scissors-icon-container{
+        border-color: rgba(236,158,13,1) ;
+        margin-left: 30px;
+    }
+    .rock-icon-container, .results-container .rock-icon-container{
+        border-color: hsl(349, 71%, 52%);
+        margin-top: 30px;
+    }
+}
+@media(max-width:600px){
+    .results-container{
+        flex-wrap: wrap;
+    }
+    .player-choice-container, .house-choice-container{
+        width: 50%;
+    }
+    .winner-container{
+        margin-top: 30px;
+        order:5;
+    }
+    .header-container{
+        margin: 20px;
+        width: 100%;
+    }
 }

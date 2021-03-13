@@ -67,6 +67,7 @@ const houseChoiseContainer=document.getElementById("house-choise-container");
 
 // Creamos la sección en donde se mostrará al ganador 
 const winnerContainer=document.createElement('div');
+winnerContainer.className='winner-container';
 winnerContainer.innerHTML=`
     <span id="win-lose"> </span>
     <button id="play-again-button" class="play-again-button"> play again</button>
@@ -107,7 +108,7 @@ function playerVsHouse () {
         playerResult="You lose";
     } else if (playerChoise.name==houseChoise.name){ 
         console.log ("hubo empate");
-        playerResult="You lose";
+        playerResult="there's a draw";
         playerScore ++;
     }
     completePlayerScoreText(playerScore);
