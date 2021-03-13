@@ -34,6 +34,12 @@ const scissors ={
 }
 const optionArray=[rock,paper,scissors];
 
+const rulesModalContainer=document.getElementById("rules-modal-container");
+const rulesButton=document.getElementById('rules-button');
+const closeIcon=document.getElementById("close-icon");
+rulesButton.addEventListener ("click", ()=>rulesModalContainer.style.display='flex');
+closeIcon.addEventListener("click",()=>rulesModalContainer.style.display='none')
+
 // Creamos los contenedores de los íconos correspondientes a cada elemento
 const scissorsContainer = document.createElement ('div');
 scissorsContainer.innerHTML= `${scissors.contentHTML}`;

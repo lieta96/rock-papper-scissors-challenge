@@ -60,7 +60,6 @@ body {
     margin-bottom: -10px;
     letter-spacing: 3px;
     color:hsl(229, 25%, 31%);
-    margin-top: 10px;
 
 }
 .score-container .player-score{
@@ -163,7 +162,7 @@ a{
     text-decoration: none;
     color: #fff;
 }
-.play-again-button{
+.play-again-button, .rules-button{
     margin-top:10px;
     padding: 10px;
     border: none;
@@ -185,6 +184,55 @@ a{
     flex-direction: column;
     justify-content: center;
 }
+.rules-container{
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    margin-bottom: 80px;
+    bottom:0;
+    cursor: pointer;
+}
+.rules-button:hover{
+    color:hsl(349, 71%, 52%);
+
+}
+.rules-modal-container{
+    display: none;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsla(237, 49%, 15%,0.3);
+    text-align: left;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    font-size: 20px;
+}
+.rules-modal{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 20px;
+    background-color: #fff;
+    color:hsl(229, 25%, 31%);
+    font-weight: 700;
+    top:0;
+    bottom: 0;
+    position: relative;
+    padding: 20px;
+}
+.image-rules{
+    margin-top: 30px;
+}
+.close-icon{
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+
 @media(max-width:850px){
     .results-container .icon-container {
         border: 10px solid;
