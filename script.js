@@ -159,9 +159,11 @@ choiceContainer.addEventListener("click",(e)=>{
     return playerChoise,playerChoiseIcon
 }); 
 
+const circleBackground =document.getElementById("circle-background");
 // Función que muestra en pantalla la elección de la casa
 const showHouseChoise=()=>{
     houseChoiseContainer.innerHTML=`${houseChoise.contentHTML}`
+    circleBackground.style.display='none';
 }
 
 const showResults =()=> {
@@ -185,6 +187,8 @@ const showButton =()=>{
     const playAgainButton= document.getElementById("play-again-button"); 
     playAgainButton.onclick = function() {
         // Se vuelve a mostrar en pantalla los tres elementos para elegir. Es importante volver a agregar al contenedor todos los elementos, porque al haber tomado el elemento seleccionado y reubicarlo en la sección de resultados, lo desplazamos de su lugar original.
+        circleBackground.style.display='inherit';
+
         choiceContainer.style.display = "flex";   
         topIcons.appendChild(paperContainer);
         topIcons.appendChild(scissorsContainer);
