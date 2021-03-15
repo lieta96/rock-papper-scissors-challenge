@@ -7,51 +7,55 @@
     <title>Document</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        .rules-modal-container{
-            width: 100vw;
-            height: 100vh;
-            background-color: hsla(237, 49%, 15%,0.3);
-            text-align: left;
+        .winner-circle-container{
             position: relative;
+            width: max-content;
         }
-        .rules-modal{
-            position: absolute;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-            border-radius: 20px;
-            background-color: #fff;
-            padding: 30px;
-            color:hsl(229, 25%, 31%);
-            font-weight: 700;
-            font-size: 30x;
-            top:0;
+       .winner-circle-one{
+           position: absolute;
+            margin:auto;
+           height:200px ;
+           width: 200px;
+           border-radius: 50%;
+       }
+       .winner-circle-two{
+            position: absolute; 
+           height:300px ;
+           width: 300px;
+           border-radius: 50%;
+       }
+       .winner-circle-three{
+         position: absolute;   
+           height:400px ;
+           width: 400px;
+           border-radius: 50%;
+       }
+       .winner-circle-four{ 
+           height:500px ;
+           width: 500px;
+           border-radius: 50%;
+       }
+       .inner-circle{
+            top: 0;
             bottom: 0;
-        }
-        .rules-modal-container img{
-            margin-top: 30px;
-        }
+            left: 0;
+            right: 0;
+            margin: auto;
+       }
+       .inner-circle, .winner-circle-four{
+           background-color: #516488;
+        opacity: 10%;
+       }
     </style>
 </head>
 <body>
-    <div id="rules-modal-container" class="rules-modal-container">
-        <div class="rules-modal">
-            <span>rules</span>
-        <img src="../images/image-rules.svg" alt="">
-        </div>
-        
+    <div class="winner-circle-container">
+        <div class="winner-circle-one inner-circle"> </div>         
+        <div class="winner-circle-two inner-circle"></div>
+        <div class="winner-circle-three inner-circle"> </div>
+
+        <div class="winner-circle-four">  </div>    
     </div>
-
-    <script>
-        const ble=document.getElementById('ble');
-        const button=document.getElementById('button');
-button.addEventListener("click",()=>{ble.appendChild(scissorsContainer)})
-        const scissorsContainer = document.createElement ('div');
-scissorsContainer.innerHTML= `<div class="icon-container scissors-icon-container" id="scissors-icon-container">
-<img src="./images/icon-scissors.svg" alt="Scissors image" id="icon-scissors">
-</div>`;
-
     </script>
 </body>
 </html>

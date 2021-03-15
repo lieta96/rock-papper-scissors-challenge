@@ -29,7 +29,6 @@ body {
     color: #fff;
     text-transform: uppercase;
     position:relative;
-    overflow: hidden;
 }
 
 .header-container{
@@ -86,6 +85,15 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.top-icons .paper-icon-container{
+    margin-right:30px;
+}
+.top-icons .scissors-icon-container{
+    margin-left:30px;
+}
+.choice-container .rock-icon-container{
+    margin-top: 20px;
+}
 .icon-container{
     background-color: #fff;
     border: 10px solid;
@@ -133,18 +141,64 @@ body {
 }
 .paper-icon-container, .results-container .paper-icon-container{
     border-color: hsl(230, 89%, 62%);
-    margin-right: 30px;
+
 }
 .scissors-icon-container,  .results-container .scissors-icon-container{
     border-color: rgba(236,158,13,1) ;
-    margin-left: 30px;
+
 }
 .rock-icon-container, .results-container .rock-icon-container{
     border-color: hsl(349, 71%, 52%);
-    margin-top: 30px;
+
 }
 .icon-container img{
     height: 50%;
+}
+/* Círculo que muestra el ganador*/
+.winner-circle{
+    z-index:-1;
+    position: absolute;
+    margin-top: 35px;
+
+}
+.winner-circle-container{
+    position: relative;
+    width: max-content;
+}
+.winner-circle-one{
+   position: absolute;
+    margin:auto;
+   height:230px ;
+   width: 230px;
+   border-radius: 50%;
+}
+.winner-circle-two{
+    position: absolute; 
+   height:330px ;
+   width: 330px;
+   border-radius: 50%;
+}
+.winner-circle-three{
+ position: absolute;   
+   height:430px ;
+   width: 430px;
+   border-radius: 50%;
+}
+.winner-circle-four{ 
+   height:530px ;
+   width: 530px;
+   border-radius: 50%;
+}
+.inner-circle{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.inner-circle, .winner-circle-four{
+   background-color: #516488;
+opacity: 10%;
 }
 
 
@@ -242,15 +296,12 @@ a{
     }
     .paper-icon-container, .results-container .paper-icon-container{
         border-color: hsl(230, 89%, 62%);
-        margin-right: 30px;
     }
     .scissors-icon-container,  .results-container .scissors-icon-container{
         border-color: rgba(236,158,13,1) ;
-        margin-left: 30px;
     }
     .rock-icon-container, .results-container .rock-icon-container{
         border-color: hsl(349, 71%, 52%);
-        margin-top: 30px;
     }
 }
 @media(max-width:600px){
@@ -265,7 +316,6 @@ a{
         order:5;
     }
     .header-container{
-        margin: 20px;
-        width: 100%;
+        width: 90%;
     }
 }

@@ -100,16 +100,27 @@ let getHouseChoise =()=>{
 let playerResult;
 
 
-
+const winnerCircle=document.createElement('div');
+winnerCircle.className='winner-circle'
+winnerCircle.innerHTML=`
+    <div class="winner-circle-container">
+        <div class="winner-circle-one inner-circle"></div>         
+        <div class="winner-circle-two inner-circle"></div>
+        <div class="winner-circle-three inner-circle"></div>
+        <div class="winner-circle-four"> </div> 
+    </div>`;
+const houseChoiceContainer=document.getElementById("house-choice-container")
 // Función que determina quién ganó
 function playerVsHouse () {
     console.log (`La casa eligió ${houseChoise.name} y el jugador eligió ${playerChoise.name}`)
     if (playerChoise.beats==houseChoise.name){
         console.log ("ganó el jugador");
         playerResult="You win";
+        playerChoiseContainer.appendChild(winnerCircle)
         playerScore ++;
     // gana el player 
     } else if (playerChoise.lose==houseChoise.name) {
+        houseChoiceContainer.appendChild(winnerCircle)
         console.log ("ganó la casa");
         playerResult="You lose";
     } else if (playerChoise.name==houseChoise.name){ 
@@ -125,27 +136,28 @@ function playerVsHouse () {
 }
 
 // Tomamos los íconos de cada elemento para que luego el jugador pueda elegir
-const paperIcon=document.getElementById("icon-paper");
-const scissorsIcon=document.getElementById("icon-scissors");
-const rockIcon=document.getElementById("icon-rock");
+const paperIcon=document.getElementById("paper-icon-container");
+const scissorsIcon=document.getElementById("scissors-icon-container");
+const rockIcon=document.getElementById("rock-icon-container");
 
 choiceContainer.addEventListener("click",(e)=>{ 
-    if (e.target==paperIcon){
+    if (e.target== paperIcon){
         playerChoiseIcon=paperContainer;
         playerChoise=paper;
+        showResults();
     } else if (e.target==rockIcon){
         playerChoise=rock;
         playerChoiseIcon=rockContainer;
+        showResults();
 
     } else if (e.target==scissorsIcon){
         playerChoise=scissors;
         playerChoiseIcon=scissorsContainer;
-
-    }
-    // Una vez elegido el elemento llamamos a una función que nos mostrará esa elección en la pantalla
-    showResults();
+        // Ejecutamos la función que nos mostrará el resultado en pantalla
+        showResults();
+    }    
     return playerChoise,playerChoiseIcon
-});
+}); 
 
 // Función que muestra en pantalla la elección de la casa
 const showHouseChoise=()=>{
@@ -161,7 +173,7 @@ const showResults =()=> {
     getHouseChoise();
     // Demoramos 1 segundo que esa elección se muestre en pantalla
     timeoutShowHouseChoise = setTimeout(showHouseChoise, 1000);
-    // DEmoramos dos segundos que se determine quién ganó
+    // Demoramos dos segundos que se determine quién ganó
     timeoutResults=window.setTimeout (playerVsHouse,2000);
     // Demoramos dos 
     //timeoutButton=window.setTimeout(showButton,2500)
@@ -179,9 +191,16 @@ const showButton =()=>{
         choiceContainer.appendChild (rockContainer)
         // Se esconden los resultados
         resultsContainer.style.display="none";
+        if (houseChoiceContainer.contains(winnerCircle)){
+             houseChoiceContainer.removeChild(winnerCircle);
+        } else if (playerChoiseContainer.contains (winnerCircle)){
+            playerChoiseContainer.removeChild(winnerCircle)
+        }
+       
+        
      
         houseChoiseContainer.innerHTML='';
-        playerChoiseContainer.innerHTML=`<span>You Picked</span>`
+        playerChoiseContainer.innerHTML=`<h4>You Picked</h4>`
         winLose.textContent=''
         resultsContainer.removeChild(winnerContainer);
     }
